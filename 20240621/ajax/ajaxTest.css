@@ -1,0 +1,29 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+    font-family: 'hack', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+table {
+    background-color: #ddddff;
+    font-weight: bold;
+}
+
+thead {
+    background-color: #ffa4b3;
+    color: #fff;
+    font-size: 30px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}

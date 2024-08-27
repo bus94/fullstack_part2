@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b722b0274e.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            /* css에서 변수를 이용해서 속성값 저장 */
+            --color--border: #03e8f9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .header {
+            background: black;
+            color: white;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header__logo__img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .header__logo__title {
+            font-size: 2rem;
+        }
+
+        .header__menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header__menu__item {
+            padding: 10px 16px;
+        }
+
+        /* 마우스가 올라갔을 때 실행하는 css */
+        .header__menu__item:hover {
+            border-bottom: 2px solid #03e8f9;
+        }
+
+        /* --------- home --------- */
+        #home {
+            background-color: black;
+            color: white;
+            width: 100%;
+            padding: 50px 16px;
+            padding-top: 150px;
+            text-align: center;
+        }
+
+        .home__img {
+            width: 250px;
+            height: 250px;
+            /* css 변수를 이용해서 적용할 땐 var(css변수명) */
+            border: 3px solid var(--color--border);
+            border-radius: 100%;
+        }
+
+        .home__title {
+            font-size: 3rem;
+        }
+
+        .home__title--strong {
+            color: #03e8f9;
+        }
+
+        .home__contact {
+            background: #03e8f9;
+            color: black;
+            padding: 1rem;
+            font-weight: bold;
+            border-radius: 4pc;
+        }
+
+        .home__contact:hover {
+            background: black;
+            color: #03e8f9;
+            /* outline → border 밖으로 그려지는 선 
+            border: 두께만큼 전체 크기를 늘어나게 함
+            outline: 전체 크기를 늘리지 않고, 테두리만 생기게 함
+           
+            offset: 테두리랑 아웃라인 사이의 여백
+            */
+            outline: 2px solid #03e8f9;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        /* 공통적인 section 영역 css */
+        .section {
+            padding: 4rem;
+            text-align: center;
+        }
+
+        /* --------- about --------- */
+
+        /* 혼자 작성
+        #about {
+            text-align: center;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        } */
+
+        .majors {
+            display: flex;
+            justify-content: space-between;
+            /* justify-content 대신 gap을 이용해도 된다. */
+            margin: 30px;
+            text-align: center;
+        }
+
+        .major {
+            background-color: black;
+            color: white;
+            border-radius: 16px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            padding: 2rem 1rem;
+        }
+
+        .major__icon {
+            font-size: 5rem;
+            margin: 1rem 0;
+            color: #03e8f9;
+            transition: all 0.5s;
+        }
+
+        .major:hover .major__icon {
+            transform: rotate(-30deg) scale(1.2);
+        }
+
+        .major__title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* --------- My Work --------- */
+        #MyWork {
+            width: 100%;
+            height: 150px;
+            background: black;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+
+        .projects__contact {
+            background: #03e8f9;
+            color: black;
+            padding: 0.5rem 2.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .projects__contact:hover {
+            background: black;
+            color: #03e8f9;
+            outline: 2px solid #03e8f9;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .projects__image {
+            background: black;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .image {
+            width: 25%;
+            height: 15rem;
+            position: relative;
+            padding: 10px;
+            /* overflow: hidden; */
+        }
+
+        .projects__img {
+            width: 100%;
+            height: 100%;
+            background: black;
+            margin: 10px;
+            border-radius: 10px;
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: all 0.8s;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            background: gray;
+            border-radius: 10px;
+            opacity: 0;
+        }
+
+        .overlay__title {
+            color: hotpink;
+            font-size: 32px;
+        }
+
+        .overlay:hover {
+            opacity: 0.9;
+        }
+
+        span {
+            position: relative;
+            left: 30px;
+            top: 0px;
+            background: hotpink;
+            padding: 5px 10px;
+            border-radius: 100%;
+            opacity: 0;
+        }
+
+        .projects__contact:hover span {
+            color: white;
+            opacity: 1;
+        }
+
+        .ha {
+            width: 100%;
+            background: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            position: absolute;
+            top: 1950px;
+        }
+
+        .ha__comment {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            width: 80%;
+            height: 100px;
+        }
+
+        .ha__img {
+            border: 1px solid #03e8f9;
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .ha__box {
+            border: 1px solid #03e8f9;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 로고와 메뉴들을 보여주는 탭으로 사용함 
+     BEM (Block Element Modify) 실무 기본적으로 id를 쓰지 않고 무조건 class -->
+    <header class="header">
+        <div class="header__logo">
+            <img class="header__logo__img" src="../img/라이언(원형).png" alt="logo">
+            <h1 class="header__logo__title"><a href="#">BeomSang_Home</a></h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li><a class="header__menu__item" href="#">Home</a></li>
+                <li><a class="header__menu__item" href="#">About</a></li>
+                <li><a class="header__menu__item" href="#">Skills</a></li>
+                <li><a class="header__menu__item" href="#">My Work</a></li>
+                <li><a class="header__menu__item" href="#">Content</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Home 화면 -->
+        <section id="home">
+            <img class="home__img" src="../img/후드 라이언.png" alt="BS profile">
+            <h2 class="home__title"><strong class="home__title--strong">I'm a developer</strong>, BeomSang</h2>
+            <a class="home__contact" href="#">Contact Me</a>
+        </section>
+        <section id="about" class="section max-container">
+            <h2 class="about__title">About me</h2>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam repudiandae nemo
+                nihil, similique quis hic!
+                Numquam eligendi cupiditate temporibus in qui sed, hicdebitis minus, eum laborum veritatis deserunt rem.
+            </p>
+            <ul class="majors">
+                <li class="major">
+                    <i class="fa-brands fa-html5 major__icon"></i>
+                    <p class="major__title">
+                        Front-End
+                    </p>
+                    <p>
+                        HTML, CSS, JavaScript, React, Web APIs
+                    </p>
+                </li>
+                <li class="major">
+                    <i class="fa-solid fa-mobile major__icon"></i>
+                    <p class="major__title">
+                        Mobile
+                    </p>
+                    <p>
+                        Android, iOS, React Navtive, Flutter, Java, Swift, Kotlin
+                    </p>
+                </li>
+                <li class="major">
+                    <i class="fa-solid fa-server major__icon"></i>
+                    <p class="major__title">
+                        Back-End
+                    </p>
+                    <p>
+                        Java, JavaScript, Go, NodeJs, Rest APIs,GraphQL
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <!-- MyWork -->
+        <section id="MyWork">
+            <h2>My Work</h2>
+            <p>Projects</p><br>
+            <a class="projects__contact" href="#">All<span class="category__count">8</span></a>
+            <a class="projects__contact" href="#">Front-end<span class="category__count">3</span></a>
+            <a class="projects__contact" href="#">Back-end<span class="category__count">3</span></a>
+            <a class="projects__contact" href="#">Mobile<span class="category__count">2</span></a>
+
+            <div class="projects__image">
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project1</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project1.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project2</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project2.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project3</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project3.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project4</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project4.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project5</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project5.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project6</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project6.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project7</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project7.webp" alt="project_image" />
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <h4 class="overlay__title">Project8</h4>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                    <img class="projects__img" src="../img/project8.webp" alt="project_image" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="Testimonial" class="ha">
+        <h2>Testimonial</h2>
+        <p>See what they say about me</p><br>
+        <div class="ha__comment">
+            <img src="../img/apeach.png" class="ha__img">
+            <div class="ha__box">
+                <p>ipsum dolor sit amet consectetur, adipisicing elit. Harum dolor, ratione, placeat quo, neque dolorem
+                    facere iure odit laboriosam dligendi perferendis? Minima, maiores laborum. Vitae, soluta! Exodio
+                    veniam pariatur!</p>
+                <p class="comment__intro">James Kim/Google</p>
+            </div>
+        </div>
+        <div class="ha__comment">
+            <div class="ha__box">
+                <p>ipsum dolor sit amet consectetur, adipisicing elit. Harum dolor, ratione, placeat quo, neque dolorem
+                    facere iure odit laboriosam dligendi perferendis? Minima, maiores laborum. Vitae, soluta! Exodio
+                    veniam pariatur!</p>
+                <p class="comment__intro">Anna Jin/Samsung</p>
+            </div>
+            <img src="../img/후드 라이언.png" class="ha__img">
+        </div>
+        <div class="ha__comment">
+            <img src="../img/tube.PNG" class="ha__img">
+            <div class="ha__box">
+                <p>ipsum dolor sit amet consectetur, adipisicing elit. Harum dolor, ratione, placeat quo, neque dolorem
+                    facere iure odit laboriosam dligendi perferendis? Minima, maiores laborum. Vitae, soluta! Exodio
+                    veniam pariatur!</p>
+                <p class="comment__intro">James Kim/Google</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

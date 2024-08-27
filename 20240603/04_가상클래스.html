@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스 선택자</title>
+    <link href="class.css" rel="stylesheet">
+    <!-- 
+        의사 선택자
+        - html 요소를 직접적으로 스타일링한다. 
+        - 가상 선택자는 html 요소를 직접적으로 선택하는 것이 아니라 해당 요소의 상태에 따라 선택하여 꾸며준다.
+
+        ":"이 가상 클래스 선택자 이다.
+        hover : 선택자에 마우스 포인터가 올라가 있는 동안에만 선택된다는 의미
+
+        div 태그 너비랑 높이를 지정하지 않으면 한 줄(선)로만 표시한다.
+    -->
+    <style>
+        a:hover {
+            color: lime;
+            font-size: 20px;
+        }
+
+        /* box1 클래스 속성 너비 100px 100px
+            background : tomato
+            애니메이션 움직임 실행 시간 단위는 초"s"를 붙인다.
+        */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            transition-duration: 1s;
+        }
+
+        /* hover: 마우스가 올라갔을 때 실행! */
+        .box1:hover {
+            width: 200px;
+            background-color: mediumorchid;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition-duration: 1s;
+        }
+
+        /* active: 마우스를 누르고 있는 동안에만 실행 */
+        .box2:active {
+            width: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.google.com">google</a>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <input type="text" />
+
+    <ul class="fruits">
+        <li>딸기</li> <!-- first-child -->
+        <li>수박</li>
+        <li>오렌지</li>
+        <li>망고</li>
+        <li>사과</li> <!-- last-child -->
+    </ul>
+
+    <table border="1" style="text-align: center;" style="font-weight: bold;">
+        <tr>
+            <td colspan="2">회원 가입</td>
+        </tr>
+        <tr>
+            <td>아이디</td>
+            <td><input class="text" type="text" placeholder="아이디를 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input class="text" type="text" placeholder="이름을 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input class="text" type="text" placeholder="비밀번호를 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input class="text" type="text" placeholder="비밀번호를 한번더 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td><input class="text" type="text" placeholder="나이를 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender" value="남자" checked>남자
+                <input type="radio" name="gender" value="여자">여자
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="회원가입">
+                <input type="reset" value="다시쓰기">
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr class="title" border-color: green;>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Points</td>
+            <td>Team</td>
+        </tr>
+        <tr class="row">
+            <td>1</td>
+            <td>Domenic</td>
+            <td>88,110</td>
+            <td>dcode</td>
+        </tr>
+        <tr class="row">
+            <td>2</td>
+            <td>Sally</td>
+            <td>72,400</td>
+            <td>Students</td>
+        </tr>
+        <tr class="row">
+            <td>3</td>
+            <td>Nick</td>
+            <td>52,300</td>
+            <td>dcode</td>
+        </tr>
+    </table>
+</body>
+
+</html>

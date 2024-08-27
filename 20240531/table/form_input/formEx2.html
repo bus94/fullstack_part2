@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 태그</title>
+</head>
+
+<body>
+    <!-- 
+        선택 입력
+        select 타입: 여러 개의 옵션이 드롭다운 리스트로 되어있다. 그 중에서 단 하나의 옵션만을 입력 받을 수 있다.
+        기본값을 가장 위에 작성한 옵션이 된다. 만약 기본값을 변경하려면 selected 속성을 이용해서 변경하면 된다.
+    -->
+    <form>
+        <h3>드롭다운</h3>
+        <select>
+            <option value="BMW">BMW</option>
+            <option value="Benz" selected>Benz</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Kia">Kia</option>
+        </select>
+    </form>
+
+    <!--
+        전화번호, 날짜와 시간
+        tel
+        datetime: 국제 표준시(UTC)로 설정된 날짜와 시간(년,월,일,시,분,초,분할초)
+        datetime-local: 사용자가 있는 지역을 기준으로 한 날짜와 시간(")
+        [사용자 기준]
+        date: 년, 월, 일
+        month: 년, 월
+        week: 년, 주
+        time: 시, 분, 초, 분할초
+    -->
+    <form>
+        <h3>핸드폰 번호</h3>
+        <input type="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####">
+        <input type="submit" value="전송">
+
+        <h3>날짜와 시간</h3>
+        <input type="datetime-local">
+        <input type="submit" value="전송">
+    </form>
+    <!--
+            select 드롭다운은 선택만 가능하다.
+            datalist 태그 - 선택하거나 키워드를 입력하거나 선택할 수 있다.
+            id: 여러 태그 중 유일한 하나
+        -->
+    <form>
+        <h3>datalist태그</h3>
+        <input type="text" list="browsers">
+        <datalist id="browsers">
+            <option value="Internet">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+        </datalist>
+    </form>
+    <!-- fieldset 태그: 태그들을 그룹화해서 하나의 단락에 저장하는 태그 -->
+    <form>
+        <fieldset>
+            <legend> Login </legend>
+            ID : <input type="text" /> <br>
+            password : <input type="password" />
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend> Login 2 </legend>
+            E-mail : <input type="e-mail" /> <br>
+            password : <input type="password" />
+        </fieldset>
+    </form>
+    <form style="text-align: center;">
+        <h1>자바 개발자 지원서</h1>
+        <p>Java,JSP,Spring에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        <hr>
+        <h3>개인 정보</h3>
+        <p>이름<input type="text" placeholder="김준완"></p>
+        <p>연락처
+            <input type="text" size="3" placeholder="010">-
+            <input type="text" size="5" placeholder="5555">-
+            <input type="text" size="5" placeholder="3333">
+        </p>
+        <p>이메일
+            <input type="email" placeholder="jjj@gamil.com" required>
+        </p>
+        <hr>
+        <h3>지원 분야</h3>
+        <input type="radio" name="지원 분야" value="웹 퍼블리싱">웹 퍼블리싱
+        <input type="radio" name="지원 분야" value="프론트앤드">프론트앤드
+        <input type="radio" name="지원 분야" value="웹 애플리케이션 개발">웹 애플리케이션 개발
+        <hr>
+        <h3>기술 능력</h3>
+        <input type="checkbox">HTML
+        <input type="checkbox">CSS
+        <input type="checkbox">JavaScript
+        <input type="checkbox">Java
+        <input type="checkbox">JSP
+        <input type="checkbox">Spring
+        <hr>
+        <h3>전공 분야</h3>
+        <p>학과
+            <select>
+                <option value="컴퓨터공학과" selected>컴퓨터공학과</option>
+                <option value="소프트웨어공학과">소프트웨어공학과</option>
+                <option value="정보시스템학과">정보시스템학과</option>
+            </select>
+        </p>
+        <hr>
+        <input type="submit" value="접수하기">
+        <input type="reset" value="다시쓰기">
+    </form>
+
+    <form>
+        <fieldset>
+            <legend> 회원가입 </legend>
+            ID <input type="text" /> <br>
+            PW <input type="password" /> <br>
+            확인 <input type="password" /> <br>
+            성별 <input type="radio" name="gender" value="남">남
+            <input type="radio" name="gender" value="여">여 <br>
+            취미 <input type="checkbox">운동
+            <input type="checkbox">여행
+            <input type="checkbox">독서 <br>
+            생일 <input type="date"><br>
+            나이 <input type="text"><br>
+            이메일 <input type="text">@
+            <select>
+                <option value="naver.com" selected>naver.com</option>
+                <option value="gamil.com">gmail.com</option>
+            </select>
+            <br>
+            <label>메모</label>
+            <textarea rows="3" cols="40"></textarea><br> 
+            <input type="submit" value="signup">
+            <input type="reset" value="reset">
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+body {
+    font-size: 16px;
+}
+
+.box {
+    /* 각 박스 사이의 여백을 아래쪽으로 주기 */
+    margin-bottom: 10px;
+}
+
+.box1 {
+    font-size: 1em;
+    background-color: lightblue;
+}
+
+.box2 {
+    font-size: 1.5em;
+    background-color: lightblue;
+}
+
+.box3 {
+    font-size: 2em;
+    background-color: lightblue;
+}
+
+.box4 {
+    font-size: 2.5em;
+    background-color: lightblue;
+}
+
+.box5 {
+    font-size: 3em;
+    background-color: lightblue;
+}
+
+.parent{
+    font-size: 1.5em; /* 16px * 1.5 = 24px */
+    background-color: lightgreen;
+    margin-bottom: 10px;
+}
+
+.child{
+    font-size: 2em; /* 24px(parent의 기본 폰트 크기를 가져옴) * 2 = 48px */
+    background-color: lightpink;
+    margin-bottom: 10px;
+}
+
+.grandchild{
+    font-size: 0.5em; /* 48px * 0.5 = 24px */
+    background-color: lightcoral;
+    margin-bottom: 10px;
+}

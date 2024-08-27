@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array1.html</title>
+    <script src="array1.js"></script>
+    <style>
+        #result {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>비밀번호</p>
+    <input type="text" id="password" onkeyup="checkPw()">
+    <!-- <button onclick="checkPw()">비밀번호 확인</button> -->
+    <button>비밀번호 확인</button>
+    <p id="resultPw">비밀번호 확인 결과 출력</p>
+
+    <p>이메일</p>
+    <input type="text" id="email" onkeyup="checkEm()">
+    <button>이메일 확인</button>
+    <p id="resultEm">이메일 확인 결과 출력</p>
+
+    <script>
+        // 버튼 클릭시 특수문자, 숫자, 대소문자 하나 이상 포함되어있으면 비밀번호 사용가능합니다.
+
+        // 요소값 가져오기
+        function checkPw() {
+            const checkPw = document.getElementById('password').value;
+            const resultPw = document.getElementById('resultPw');
+            // 잘 들어오는지 확인
+            // console.log(checkPw);
+            // console.log(result);
+            const isResultPw = /\S+/.test(checkPw);
+            console.log(isResultPw); // true
+            if(isResultPw) {
+                // p 태그에 글씨 작성
+                // 초록색으로 비밀번호 사용 가능
+                resultPw.innerHTML = '비밀번호 사용 가능'; // result는 element를 가져온 것
+                // 클래스 이름 속성 추가
+                // className = '클래스명';
+                resultPw.className = 'green';
+            } else {
+                // p 태그에 글씨 작성
+                // 빨간색으로 비밀번호 사용 불가능
+                resultPw.innerHTML = '비밀번호 사용 불가';
+                resultPw.className = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

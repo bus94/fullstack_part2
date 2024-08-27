@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed.html</title>
+    <style>
+        .container {
+            margin: 200px;
+            padding: 10px;
+            background-color: darkgray;
+        }
+        .box {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            background-color: chocolate;
+        }
+        /* fixed 부모로 웹 브라우저 기준으로 위치 지정한다. */
+        /* .box2 {
+            background-color: blue;
+            position: fixed;
+            top: 0;
+            right: 0;
+        } */
+         /* fixed 처음부터 내려오지만 sticky는 어느 정도 내려오다가 기준을 넘어가게 되면 그 때 같이 움직이게 된다. */
+        /* sticky 부모 요소 안에 위치를 잡고 있다가 스크롤이 내려왔을 때 고정이 된다. */
+         .box2 {
+            background-color: blue;
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+        <div class="box box10"></div>
+    </div>
+</body>
+
+</html>

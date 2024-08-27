@@ -1,0 +1,15 @@
+body {
+    background-color: beige;
+    text-align: center;
+}
+header {
+    float: left;
+}
+.container {
+    width: 80%;
+}
+.item {
+    width: 30%;
+    /* clear: both; 위에 적용된 float 정렬 내용을 모두 취소한다. */
+    float: left;
+}

@@ -1,0 +1,31 @@
+/* #아이디 {
+    background-color: lightgreen;
+    width: 30%;
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+
+#비밀번호 {
+    background-color: #ffb6c1;
+    width: 30%;
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+} */
+
+#input-message,
+#password-message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid black;
+  }

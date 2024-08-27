@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델6.html</title>
+    <style>
+        .page{
+            width: 200px;
+            height: 100px;
+            border: 3px solid red;
+            /* 선언한 영역을 넘겼을 때 넘겨진 내용을 안보이게 처리하는 속성 */
+            /* overflow: hidden; - 안 보임 */
+            /* overflow: visible; - 다 보임 */
+            /* overflow: scroll; - 항상 스크롤 처리 */
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        This is a very long text that will overflow the boundaries of the container. 
+        This is a very long text that will overflow the boundaries of the container.
+    </div>
+</body>
+
+</html>

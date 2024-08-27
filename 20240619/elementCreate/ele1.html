@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ele1.html</title>
+</head>
+<body>
+    <input type="button" value="Element 만들기" onclick="elementCreate()">
+
+    <script>
+        // 위의 요소를 실행할 때 사용하는 자바스크립트 태그
+        // html 요소를 추가하는 함수
+        function elementCreate() {
+            // createElement('태그명') 생성
+            // 태그만 만들고, 안의 내용은 비어있다.
+            // div 요소를 생성하기 (<div></div> 생성)
+            let div = document.createElement('div');
+            console.log(div);
+
+            /* 
+            createAttribute('속성이름') - ex) style, display 등등
+            인수로 속성 이름을 넣어서 설정
+            */
+           // 이미 만들어진 div이기 때문에, 여기서는 create가 아닌 set으로 수정하는 개념으로 접근
+           div.setAttribute('style', 'border : 2px solid red');
+           // <marquee></marquee> 태그 : 좌우상하로 움직이는 태그 (기본 설정: 오른쪽에서 왼쪽으로 이동)
+           div.innerHTML = '<marquee>div 태그 추가</marquee>';
+
+           // html 문서에 (직접적으로) 추가한다.
+           document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>

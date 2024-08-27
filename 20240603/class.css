@@ -1,0 +1,12 @@
+.title{
+    background-color: green;
+    color: white;
+}
+.text{
+    background-color: hotpink;
+}
+.row:hover{
+    color: green;
+    font-weight: bold;
+    background-color: aliceblue;
+}

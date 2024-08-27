@@ -1,0 +1,21 @@
+body {
+    background-color: hotpink;
+}
+
+/* 부모 요소의 스타일 */
+/* 
+parent{
+    
+} - parent라는 태그를 찾는 것!
+*/
+.parent {
+    color: white;
+}
+
+/* 자식 요소의 스타일 */
+.child {
+    font-size: 30px;
+    color: blue;
+    font-style: oblique;
+    font
+}

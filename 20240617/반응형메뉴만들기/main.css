@@ -1,0 +1,164 @@
+/* .container-fluid {
+    background: lightslategrey;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand__style {
+    margin: auto;
+    padding: 5px;
+    font-size: 30px;
+}
+
+.navbar-nav {
+    text-align: center;
+    color: white;
+} */
+
+body {
+    /* 웹 페이지를 상단 바가 다 채우기! */
+    margin: 0;
+    /* body 내 모든 폰트 동일하게 적용 */
+    font-family: 'Segoe Script';
+}
+
+.navbar {
+    /* 한 줄에 나란히 배치 */
+    display: flex;
+    justify-content: space-between;
+    background: #263343;
+    align-items: center;
+    padding: 5px 20px;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px; */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar_logo_title {
+    color: indianred;
+    font-weight: bold;
+}
+
+.navbar_logo {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+/* 가운데 로고 css */
+.navbar_menu {
+    list-style: none;
+    /* 메뉴들을 한 줄에 나란히 설정 */
+    display: flex;
+}
+
+.navbar_menu li {
+    padding: 5px 20px;
+}
+
+.navbar_menu li:hover {
+    background-color: orange;
+    border-radius: 5px;
+}
+
+/* 가장 오른쪽 아이콘 설정 */
+.navbar_icons {
+    color: white;
+    list-style: none;
+    display: flex;
+}
+
+.navbar_icons li {
+    padding: 5px 10px;
+}
+
+/* 토글 버튼 시작 설정 */
+/* position 위치 설정 / absolute 부모 요소의 위치에 따라 위치 설정 */
+.navbar_toogleBtn {
+    font-size: 30px;
+    display: none;
+    position: absolute;
+    right: 30px;
+}
+
+
+
+
+/* 반응형을 만들고 싶을 땐 @media screen and (최대너비 지정) 
+브라우저의 반응형 크기는 본인이 선택*/
+@media screen and (max-width:1000px) {
+    .navbar {
+        flex-direction: column;
+        /* 왼쪽으로 이동 */
+        align-items: flex-start;
+    }
+
+    /* 최대 크기가 1000px 이하이면 가운데 메뉴를 안보이도록 설정 */
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_toogleBtn {
+        display: block;
+    }
+
+    /* 실제 navbar_toogleBtn이 보이면(활성화) */
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
+}
+
+.fixed_menu {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    font-size: 50px;
+    background-color: #263343;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.fixed_menu_btn {
+    border: none;
+    background: #263343;
+    color: white;
+}
+
+.black-bg {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    padding: 30px;
+    display: none;
+}
+
+.show_modal {
+    /* classList.add() 참조하기 */
+    /* display: block; */
+}

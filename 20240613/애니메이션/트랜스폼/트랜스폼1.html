@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼1.html</title>
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            font-size: 30px;       
+            margin: 50px; 
+
+            /* 애니메이션의 시작 위치를 설정 */
+            /* 자기 자신의 위치를 기억해서 이동할 수 있도록 부모 격의 클래스 위치 relative 설정해두기 */
+            position: relative;
+            top: 0;
+            left: 0;
+            transition-duration: 0.5s;
+        }
+
+        .box:hover {
+            background: blue;
+
+            /* transform: translateX(200px); */
+            /* transform: translate(100px, 300px); */
+            /* transform: rotate(1000deg); */ 
+
+            /* transform: 두 개 이상의 변환하는 함수를 사용할 때 단축 속성을 이용해서 공백을 기준으로 나눠 주면 된다. */
+            /* rotate(각도deg): 양수 - 시계방향 / 음수 - 반시계방향 */
+            transform: translate(100px, 300px) rotate(1000deg);
+            
+            /* 애니메이션의 종료 위치를 설정 
+            position: relative;
+            top: 200px;
+            left: 200px; */
+
+            /* filter: brightness(100%); 
+            () 괄호 안에 퍼센트를 사용해서 현재 색상을 조금 더 밝거나 어둡게 표현 가능하다. 기준: 100% ↑(밝게), ↓(어둡게) */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">123</div>
+</body>
+</html>

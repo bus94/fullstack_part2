@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 합치기</title>
+</head>
+
+<body>
+    <!--
+        테이블 합치기(열, 행)
+        테이블의 열을 합칠 때 사용하는 속성 > colspan 키워드 이용
+        테이블의 행을 합칠 때 사용하는 속성 > rowspan 키워드 이용
+
+        자동 정렬(Ctrl + k + f)
+    -->
+    <h1>테이블의 열 합치기</h1>
+    <table border="1">
+        <tr>
+            <td>참치</td>
+            <td colspan="2">고래</td>
+        </tr>
+        <tr>
+            <td>상어</td>
+            <td>문어</td>
+            <td>꽁치</td>
+        </tr>
+        <tr>
+            <td>오징어</td>
+            <td>고등어</td>
+            <td>돌고래</td>
+        </tr>
+    </table>
+
+    <h1>테이블의 행 합치기</h1>
+    <table border="1">
+        <tr>
+            <td>참치</td>
+            <td>고래</td>
+            <td>날치</td>
+        </tr>
+        <tr>
+            <td rowspan="2">상어</td>
+            <td>문어</td>
+            <td>꽁치</td>
+        </tr>
+        <tr>
+            <td>고등어</td>
+            <td>돌고래</td>
+        </tr>
+    </table>
+
+    <h1>테이블의 열과 행 합치기</h1>
+    <table border="1">
+        <tr>
+            <td colspan="5">1</td>
+        </tr>
+        <tr>
+            <td colspan="5">2</td>
+        </tr>
+        <tr>
+            <td rowspan="3">3</td>
+            <td rowspan="3">4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td colspan="2">8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td colspan="3">10</td>
+        </tr>
+
+    </table>
+
+    <!--
+        테이블 상단이나 제목에 간단한 설명을 붙일 수 있다
+        <caption> 이용
+    -->
+    <h1>캡션태그</h1>
+    <table border="1">
+        <caption>해양 생물</caption>
+        <td>참치</td>
+        <td>고래</td>
+        <td>날치</td>
+
+    </table>
+</body>
+
+</html>

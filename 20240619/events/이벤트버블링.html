@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Example</title>
+    <style>
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        .child {
+            width: 150px;
+            height: 150px;
+            background-color: lightcoral;
+        }
+
+        .grandchild {
+            width: 75px;
+            height: 75px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    이벤트 버블링
+    - 어떤 html 태그에 이벤트가 발생하면 그의 모든 상위 요소까지 이벤트가 실행되는 현상을 이벤트 버블링 
+    -->
+
+    <div class="box container" id="container">
+        Container
+        <div class="box child" id="child">
+            Child
+            <div class="box grandchild" id="grandchild">
+                Grandchild
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('container').addEventListener('click', function (event) {
+            alert('Container clicked!');
+            console.log('Container clicked!');
+            event.stopPropagation();
+        });
+
+        document.getElementById('child').addEventListener('click', function (event) {
+            alert('Child clicked!');
+            console.log('Child clicked!');
+            event.stopPropagation();
+        });
+
+        document.getElementById('grandchild').addEventListener('click', function (event) {
+            alert('Grandchild clicked!');
+            console.log('Grandchild clicked!');
+            event.stopPropagation();
+        });
+
+        // 이벤트 관련 함수
+        function events(e) {
+            // 실제 클릭한 요소 알려줌
+            // 이벤트가 발생한 곳
+            e.target;
+
+            // 이벤트 리스너가 달린 곳(요소)
+            e.currentTarget;
+
+            // 이벤트 기본 동작을 막아준다. ("form 태그로 전송하지 마라")
+            e.preventDefault();
+
+            // 상위 요소들이 이벤트를 중단 (버블링 중단)
+            e.stopPropagation();
+        }
+    </script>
+</body>
+
+</html>

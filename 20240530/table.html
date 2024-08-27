@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+    <!-- 
+        여러 개의 태그에 한꺼번에 설정을 할 땐 css 스타일(꾸밈을 주기 위해)
+        body 부분에 나오는 th, td는 전부 적용 된다.
+    -->
+    <style>
+        th, td{
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        표 형식으로 데이터를 저장(자바의 JTable) 
+        <table> 표를 감싸는 태그
+        <tr> table row      표 내부의 행
+        <th> table heading  행 내부의 제목
+        <td> table data     행 내부의 값(셀)
+    -->
+    <table border="2">
+        <!-- 한 행에 대한 열의 이름 -->
+        <tr>
+            <th>밥류</th>
+            <th>면류</th>
+            <th>분식류</th>
+        </tr>
+        <tr>
+            <td>김밥</td>
+            <td>라면</td>
+            <td>떡볶이</td>
+        </tr>
+        <tr>
+            <td>주먹밥</td>
+            <td>우동</td>
+            <td>순대</td>
+        </tr>        
+    </table>
+
+    <h1>행렬 합치기</h1>
+    <table border="1">
+        <tr>
+            <td colspan="3">공연요금</td>
+        </tr>
+        <tr>
+            <td>구분</td>
+            <td>s석</td>
+            <td>vip</td>
+        </tr>
+        <tr>
+            <td>성인</td>
+            <td>4,000원</td>
+            <td>6,000원</td>
+        </tr>
+
+        <tr>
+            <td>소인</td>
+            <td colspan="2">미취학 아동 일반 요금의 50%</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">공연시간</td>
+            <td>1회</td>
+            <td>13:00시 ~ 15:00시</td>
+        </tr>
+
+        <tr>
+            <td>2회</td>
+            <td>17:00시 ~ 19:00시</td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+.slide-container {
+    display: flex;
+    width: 300vw;
+    transition: all 1s;
+    /* transform: translateX(-100vw); */
+}
+
+.slide-box {
+    /* 웹 브라우저 화면을 100% 설정 */
+    width: 100vw;
+}
+
+.slide-box img{
+    width: 100%;
+}
+

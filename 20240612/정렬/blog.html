@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog.html</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .section {
+            background-image: url("../img/shoes.jpg");
+            background-size: cover;
+            height: 80vh;
+
+            /* 내부 디자인 */
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            width: 70%;
+            margin: auto;
+        }
+
+        .buy-button {
+            background-color: white;
+            border: none;
+            font-size: 20px;
+            padding: 15px;
+            /* 마우스 포인터 그림을 손가락 모양으로 변경 */
+            cursor: pointer;
+            /* 100%로 지정할 경우 원(타원) 모양이 된다. */
+            border-radius: 10px;
+            margin: 30px;
+        }
+
+        .info-section {
+            width: 70%;
+            margin: -50px auto;
+            background-color: lightgray;
+            box-shadow: rgb(38, 57, 57) 0px 20px 30px -10px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="info-content">
+            <h1>Buy our excellent shoes!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt a consectetur molestiae dolorem
+                tempore eaque culpa voluptas odio in obcaecati.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </div>
+    <div class="info-section">
+        <h3>How we design our shoes</h3>
+        <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolorem aliquid, libero ut distinctio
+            tempora labore ipsum tempore quae atque consectetur dolores, sapiente cumque animi provident.</p>
+    </div>
+
+
+</body>
+
+</html>

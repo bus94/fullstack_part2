@@ -1,0 +1,47 @@
+* {
+    background-color: beige;
+    text-align: center;
+}
+
+/* h1{
+    color: green
+}
+h1, h2{
+    text-align: center;
+} */
+/* 공통 스타일 적용하여 최대한 중복없이 작성
+- 위에서 css 스타일을 적용해도 뒤 또는 아래에서 스타일 적용하면 위의 스타일이 무시된다.*/
+h1,
+h2,
+p {
+    color: white;
+    background-color: blue;
+}
+
+.headings {
+    color: green;
+    background-color: rgb(250, 128, 128);
+}
+
+.headings2 {
+    /* 글 스타일 굵기 bold*/
+    /* font-weight: bold; */
+    color: blue;
+}
+
+/* 복합 선택자 */
+span.orange{
+    color: green;
+}
+
+/* 자식 선택자: ">"이 선택자이고 자식 요소 
+    내 태그 안에 한 단계 아래 요소를 선택한다. */
+ul > .orange{
+    color: blueviolet;
+}
+
+/* 자손 선택자 " "(공백 1칸이 선택자이고, 자손 요소(모든 요소)를 선택한다.) */
+div .apple{
+    color: mediumaquamarine;
+}
+

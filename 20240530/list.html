@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트</title>
+</head>
+<body>
+    <h1> 리스트 </h1>
+    <!--
+        리스트는 두 가지로 나뉜다.
+        모양이 있는 리스트와 모양이 없는 리스트로 구분
+
+        정렬이 되었는지, 안되었는지로 구별
+
+        순서가 없는 리스트 <ul>태그 사용
+        글자 앞에 동그라미가 붙는다. 만약 동그라미를 제거하고 싶을 경우 css 스타일 꾸밈을 없앨 수 있다.
+        style="list-style: none;"
+            > 동그라미를 전부 없애고 싶다면 ul태그의 속성으로 지정하고, 원하는 리스트만 없애고 싶다면 원하는 태그에만 설정하면 된다.
+
+    -->
+    <ul style="list-style: none;">
+        <li>리스트 아이템1</li>
+        <li>리스트 아이템2</li>
+        <li>리스트 아이템3</li>
+    </ul>
+
+    <ul>
+        <li style="list-style: none;">리스트 아이템1</li>
+        <li>리스트 아이템2</li>
+        <li>리스트 아이템3</li>
+    </ul>
+
+    <!-- 
+        순서가 있는 리스트
+        정렬 리스트 ol 태그
+        기본적으로 1부터 셋팅
+    -->
+    <ol>
+        <li>아이스 아메리카노</li>
+        <li>카페모카</li>
+        <li>카페라떼</li>
+    </ol>
+
+    <ol start = "3">
+        <li>아이스 아메리카노</li>
+        <li>카페모카</li>
+        <li>카페라떼</li>
+    </ol>
+
+    <!-- 역순으로 출력 -->
+    <ol reversed>
+        <li>아이스 아메리카노</li>
+        <li>카페모카</li>
+        <li>카페라떼</li>
+    </ol>
+
+    <!-- 중첩 목록 -->
+    <ul>
+        <li>Coffee</li>
+        <li>Tea
+            <ol>
+                <li>Black Tea</li>
+                <li>Green Tea</li>
+            </ol>
+        </li>
+        <li>Milk</li>
+    </ul>
+
+    <ul>
+        <li>개인뱅킹
+            <ul>
+                <li>조회</li>
+                <li>이체</li>
+                <li>신규/해지</li>
+                <li>공과금/법원</li>
+                <li>뱅킹보안센터</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>자산관리
+            <ul>
+                <li>나의지출</li>
+                <li>이체</li>
+                <li>신규/해지</li>
+                <li>공과금/법원</li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>예금/신탁</li>
+        <li>대출</li>
+        <li>펀드</li>
+        <li>의환</li>
+    </ul>
+</body>
+</html>
